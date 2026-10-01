@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0A0A10;
+  --violet: #7C3AED;
+  --text: #F4F5F6;
+  --muted: rgba(244, 245, 246, 0.6);
+  --glass: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+  --display: 'Unbounded', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Manrope', sans-serif;
+  color: var(--text);
+  background: linear-gradient(135deg, #1A1238 0%, #0C0B14 45%, #0A0A10 70%, #17153A 100%);
+  background-attachment: fixed;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* ===== Заголовок ===== */
+.heading {
+  margin-bottom: 40px;
+}
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--violet);
+  margin-bottom: 10px;
+}
+
+.title {
+  font-family: var(--display);
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 700;
+}
+
+/* ===== Карточки ===== */
+.users-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.user-card {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.user-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--violet);
+}
+
+.user-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.user-card p {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 6px;
+  word-break: break-word;
+}
+
+/* ===== Состояния ===== */
+.loading,
+.error {
+  grid-column: 1 / -1;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.error {
+  color: #FF6B6B;
+}
